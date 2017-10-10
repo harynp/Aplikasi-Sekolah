@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<%- include ./partials/session.ejs %>
+  <body>
+    <h1>Halaman Add Students</h1>
+    <%if(dataError){ %>
+      <p><%=dataError%></p>
+    <%}%>
+    <table>
+      <form action="/students/add" method="post">
+        First name:<br>
+        <input type="text" name="first_name" placeholder="input first_name">
+        <br>
+        Last name:<br>
+        <input type="text" name="last_name" placeholder="input last_name">
+        <br>
+        Email:<br>
+        <input type="text" name="email" placeholder="email">
+        <br>
+        <button type="submit" name="button">Save</button>
+      </form>
+    </table>
+  </body>
+</html>

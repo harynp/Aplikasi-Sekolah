@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<%- include ./partials/session.ejs %>
+  <body>
+    <table>
+      <form action="/subjects/enrolledstudents/givescore/<%= dataSubject.id%>/<%= dataStudent.id%>" method="post">
+        <h1><%= dataSubject.subject_name%></h1>
+        Name :
+        <h3><%= dataStudent.FullName()%></h3>
+        Score:<br>
+        <input type="text" name="Score" placeholder="input Score">
+        <br>
+        <button type="submit" name="button">Save</button>
+      </form>
+    </table>
+  </body>
+</html>

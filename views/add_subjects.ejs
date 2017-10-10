@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <%- include ./partials/session.ejs %>
+  <body>
+    <h1>Halaman Add Subjects</h1>
+    <table>
+      <form action="/subjects/add" method="post">
+        Subject Names:<br>
+        <input type="text" name="subject_name" placeholder="input subjects_name">
+        <br>
+        <button type="submit" name="button">Save</button>
+      </form>
+    </table>
+  </body>
+</html>

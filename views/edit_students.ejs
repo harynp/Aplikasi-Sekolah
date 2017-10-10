@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<%- include ./partials/session.ejs %>
+  <body>
+    <h1>Halaman Edit Students</h1>
+    <table>
+      <form action="/students/edit/<%= dataStudents.id%>" method="post">
+        First name:<br>
+        <input type="text" name="first_name" value="<%=dataStudents.first_name%>">
+        <br>
+        Last name:<br>
+        <input type="text" name="last_name" value="<%=dataStudents.last_name%>">
+        <br>
+        Email:<br>
+        <input type="email" name="email" value="<%=dataStudents.email%>">
+        <br>
+        <button type="submit" name="button">Save</button>
+      </form>
+    </table>
+  </body>
+</html>

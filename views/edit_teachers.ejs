@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <%- include ./partials/session.ejs %>
+  <body>
+    <h1>Halaman Edit Teachers</h1>
+    <table>
+      <form action="/teachers/edit/<%= dataTeachers.id%>" method="post">
+        First name:<br>
+        <input type="text" name="first_name" value="<%=dataTeachers.first_name%>">
+        <br>
+        Last name:<br>
+        <input type="text" name="last_name" value="<%=dataTeachers.last_name%>">
+        <br>
+        Email:<br>
+        <input type="email" name="email" value="<%=dataTeachers.email%>">
+        <br>
+        Subject Name:<br>
+        <select name="SubjectsId">
+        <%dataSubjects.forEach(row=>{ %>
+          <option value="<%= row.id%>"><%= row.subject_name%></option>
+        <%})%>
+        </select>
+        <button type="submit" name="button">Save</button>
+      </form>
+    </table>
+  </body>
+</html>

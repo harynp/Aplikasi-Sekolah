@@ -1,0 +1,40 @@
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <meta charset="utf-8">
+  <title>Halaman Menu</title>
+</head>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <!-- TITLE HEADER -->
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Schools</a>
+      </div>
+      <!-- END OF TITLE -->
+
+      <!-- MAIN MENU -->
+      <%if(session.role == 'headmaster'){%>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/subjects">Subjects</a></li>
+        <li class="active"><a href="/teachers">Teachers</a></li>
+        <li class="active"><a href="/students">Students</a></li>
+        <li class="active"><a href="/logout">Logout</a></li>
+      </ul>
+      <%} else if(session.role == 'academic'){%>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="/subjects">Subjects</a></li>
+          <li class="active"><a href="/students">Students</a></li>
+          <li class="active"><a href="/logout">Logout</a></li>
+        </ul>
+      <%} else if(session.role == 'teacher'){%>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="/students">Students</a></li>
+          <li class="active"><a href="/logout">Logout</a></li>
+        </ul>
+      <%}%>
+    </div>
+  </nav>

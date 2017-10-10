@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<%- include ./partials/session.ejs %>
+  <body>
+    <div class="container-fluid">
+      <table class="table table-stripped">
+        <thead>
+          <tr>
+            <th>Nama</th>
+            <th>Nilai</th>
+            <th>Akreditasi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%dataConj.forEach(row=>{%>
+            <tr>
+              <td><%=row.Student.FullName()%></td>
+              <%if(row.Score == null && row.Student !==null){ %>
+                <td><a href="/subjects/enrolledstudents/givescore/<%=row.SubjectId%>/<%=row.StudentId%>">Score</td>
+                <td>Belum dinilai</td>
+              <%} else if(row.score !==null) {%>
+                <td><%= row.Score%></td>
+                <td><%= akreditasi(row.Score)%></td>
+              <%}%>
+            </tr>
+          <%})%>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

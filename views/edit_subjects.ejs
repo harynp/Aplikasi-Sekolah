@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <%- include ./partials/session.ejs %>
+  <body>
+    <h1>Halaman Edit Subjects</h1>
+    <table>
+      <form action="/subjects/edit/<%= dataSubjects.id%>" method="post">
+        Subject Name:<br>
+        <input type="text" name="subject_name" value="<%=dataSubjects.subject_name%>">
+        <br>
+        <button type="submit" name="button">Save</button>
+      </form>
+    </table>
+  </body>
+</html>
